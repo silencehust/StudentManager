@@ -15,47 +15,82 @@ namespace StudentManager
         public FrmMain()
         {
             InitializeComponent();
-           
+            this.lblCurrentUser.Text = Program.CurrentAdmin.AdminName+"]";//显示登录用户名
+            this.panelForm.BackgroundImage = Image.FromFile("main.jpg");//显示主窗体背景图片
+            this.lblVersion.Text="版本号：V"+ ConfigurationManager.AppSettings["sysversion"].ToString();//显示版本号
+
         }    
 
         #region 嵌入窗体显示
+        //打开窗体
+        private void OpenForm(Form objForm)
+        {
+            objForm.TopLevel = false;//将当前窗体设置为非顶级控件
+            objForm.WindowState = FormWindowState.Maximized;//设置窗体最大化
+            objForm.FormBorderStyle = FormBorderStyle.None;//去掉窗体边框
+            objForm.Parent = this.panelForm;//指定当前子窗体显示的容器
+            objForm.Show();
+        }
 
+        //关闭窗体
+        private void CloseForm()
+        {
+            foreach (Control item in this.panelForm.Controls)
+            {
+                if(item is Form)
+                {
+                    Form objControl = (Form)item;//转换为具体窗体对象
+                    objControl.Close();
+                    this.panelForm.Controls.Remove(item);
+                }
+            }
+        }
      
         //显示添加新学员窗体       
         private void tsmiAddStudent_Click(object sender, EventArgs e)
-        {          
+        {
+            CloseForm();
             FrmAddStudent objForm = new FrmAddStudent();
+            this.OpenForm(objForm);
           
         }
         //考勤打卡      
         private void tsmi_Card_Click(object sender, EventArgs e)
         {
-            //FrmAttendance objForm = new FrmAttendance();
-            
+            CloseForm();
+            FrmAttendance objForm = new FrmAttendance();
+            this.OpenForm(objForm);
+
         }
         //成绩快速查询【嵌入显示】
         private void tsmiQuery_Click(object sender, EventArgs e)
         {
-          //  FrmScoreQuery objForm = new FrmScoreQuery();
-            
+            CloseForm();
+            FrmScoreQuery objForm = new FrmScoreQuery();
+            this.OpenForm(objForm);
+
         }
         //学员管理【嵌入显示】
         private void tsmiManageStudent_Click(object sender, EventArgs e)
         {
-           // FrmStudentManage objForm = new FrmStudentManage();
-           
+            CloseForm();
+            FrmStudentManage objForm = new FrmStudentManage();
+            this.OpenForm(objForm);
+
         }
         //显示成绩查询与分析窗口    
         private void tsmiQueryAndAnalysis_Click(object sender, EventArgs e)
         {
+            CloseForm();
             FrmScoreManage objForm = new FrmScoreManage();
-            //
+            this.OpenForm(objForm);
         }
         //考勤查询
         private void tsmi_AQuery_Click(object sender, EventArgs e)
         {
+            CloseForm();
             FrmAttendanceQuery objForm = new FrmAttendanceQuery();
-          //
+            this.OpenForm(objForm);
         }
         #endregion
 
@@ -65,8 +100,17 @@ namespace StudentManager
         private void tmiClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }      
+        }
 
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("确认退出？", "退出询问",
+                                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
         #endregion
 
         #region 其他
@@ -114,8 +158,13 @@ namespace StudentManager
            
         }
 
-        #endregion 
 
-    
+        #endregion
+
+        private  void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
     }
 }

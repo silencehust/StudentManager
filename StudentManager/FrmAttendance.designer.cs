@@ -113,7 +113,7 @@
             this.lblDay.Name = "lblDay";
             this.lblDay.Size = new System.Drawing.Size(45, 29);
             this.lblDay.TabIndex = 79;
-            this.lblDay.Text = "07";
+            this.lblDay.Text = "08";
             this.lblDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMonth
@@ -127,7 +127,7 @@
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(45, 29);
             this.lblMonth.TabIndex = 78;
-            this.lblMonth.Text = "07";
+            this.lblMonth.Text = "05";
             this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTime
@@ -155,7 +155,7 @@
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(73, 29);
             this.lblYear.TabIndex = 75;
-            this.lblYear.Text = "2013";
+            this.lblYear.Text = "2016";
             this.lblYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -398,11 +398,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("方正准圆简体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Purple;
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 32);
+            this.label1.Size = new System.Drawing.Size(252, 33);
             this.label1.TabIndex = 97;
             this.label1.Text = "考勤打卡进行中...";
             // 
@@ -453,6 +453,7 @@
             this.Name = "FrmAttendance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[考勤打卡进行中...]";
+            this.Load += new System.EventHandler(this.FrmAttendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbStu)).EndInit();
             this.gp01.ResumeLayout(false);
             this.gp01.PerformLayout();

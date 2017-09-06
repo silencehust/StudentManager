@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLoginId = new System.Windows.Forms.TextBox();
-            this.txLoginPwd = new System.Windows.Forms.TextBox();
+            this.txtLoginPwd = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,15 +63,17 @@
             this.txtLoginId.Size = new System.Drawing.Size(135, 21);
             this.txtLoginId.TabIndex = 0;
             this.txtLoginId.Text = "1001";
+            this.txtLoginId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginId_KeyDown);
             // 
-            // txLoginPwd
+            // txtLoginPwd
             // 
-            this.txLoginPwd.Location = new System.Drawing.Point(310, 75);
-            this.txLoginPwd.Name = "txLoginPwd";
-            this.txLoginPwd.PasswordChar = '*';
-            this.txLoginPwd.Size = new System.Drawing.Size(135, 21);
-            this.txLoginPwd.TabIndex = 1;
-            this.txLoginPwd.Text = "123456";
+            this.txtLoginPwd.Location = new System.Drawing.Point(310, 75);
+            this.txtLoginPwd.Name = "txtLoginPwd";
+            this.txtLoginPwd.PasswordChar = '*';
+            this.txtLoginPwd.Size = new System.Drawing.Size(135, 21);
+            this.txtLoginPwd.TabIndex = 1;
+            this.txtLoginPwd.Text = "123456";
+            this.txtLoginPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginPwd_KeyDown);
             // 
             // btnLogin
             // 
@@ -117,7 +119,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txLoginPwd);
+            this.Controls.Add(this.txtLoginPwd);
             this.Controls.Add(this.txtLoginId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -138,7 +140,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLoginId;
-        private System.Windows.Forms.TextBox txLoginPwd;
+        private System.Windows.Forms.TextBox txtLoginPwd;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;

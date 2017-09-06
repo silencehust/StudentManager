@@ -65,9 +65,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Location = new System.Drawing.Point(17, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "学员班级：";
             // 
@@ -75,18 +76,20 @@
             // 
             this.cboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboClass.FormattingEnabled = true;
-            this.cboClass.Location = new System.Drawing.Point(84, 30);
+            this.cboClass.Location = new System.Drawing.Point(112, 38);
+            this.cboClass.Margin = new System.Windows.Forms.Padding(4);
             this.cboClass.Name = "cboClass";
-            this.cboClass.Size = new System.Drawing.Size(117, 20);
+            this.cboClass.Size = new System.Drawing.Size(155, 23);
             this.cboClass.TabIndex = 1;
             // 
             // btnQuery
             // 
             this.btnQuery.Image = ((System.Drawing.Image)(resources.GetObject("btnQuery.Image")));
             this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery.Location = new System.Drawing.Point(218, 29);
+            this.btnQuery.Location = new System.Drawing.Point(291, 36);
+            this.btnQuery.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery.Size = new System.Drawing.Size(100, 29);
             this.btnQuery.TabIndex = 2;
             this.btnQuery.Text = "查  询";
             this.btnQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,7 +117,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStudentList.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudentList.Location = new System.Drawing.Point(22, 209);
+            this.dgvStudentList.Location = new System.Drawing.Point(29, 261);
+            this.dgvStudentList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -127,8 +131,9 @@
             this.dgvStudentList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudentList.RowTemplate.Height = 23;
             this.dgvStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentList.Size = new System.Drawing.Size(707, 325);
+            this.dgvStudentList.Size = new System.Drawing.Size(943, 406);
             this.dgvStudentList.TabIndex = 3;
+            this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
             this.dgvStudentList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellDoubleClick);
             this.dgvStudentList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvStudentList_RowPostPaint);
             // 
@@ -172,22 +177,24 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiModifyStu,
             this.tsmidDeleteStu});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 84);
             // 
             // tsmiModifyStu
             // 
             this.tsmiModifyStu.Name = "tsmiModifyStu";
-            this.tsmiModifyStu.Size = new System.Drawing.Size(136, 22);
+            this.tsmiModifyStu.Size = new System.Drawing.Size(181, 26);
             this.tsmiModifyStu.Text = "修改学员(&M)";
+            this.tsmiModifyStu.Click += new System.EventHandler(this.tsmiModifyStu_Click);
             // 
             // tsmidDeleteStu
             // 
             this.tsmidDeleteStu.Name = "tsmidDeleteStu";
-            this.tsmidDeleteStu.Size = new System.Drawing.Size(136, 22);
+            this.tsmidDeleteStu.Size = new System.Drawing.Size(181, 26);
             this.tsmidDeleteStu.Text = "删除学员(&D)";
             // 
             // groupBox1
@@ -195,35 +202,40 @@
             this.groupBox1.Controls.Add(this.txtStudentId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnQueryById);
-            this.groupBox1.Location = new System.Drawing.Point(22, 142);
+            this.groupBox1.Location = new System.Drawing.Point(29, 178);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 53);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(488, 66);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "按学号精确查询";
             // 
             // txtStudentId
             // 
-            this.txtStudentId.Location = new System.Drawing.Point(95, 21);
+            this.txtStudentId.Location = new System.Drawing.Point(127, 26);
+            this.txtStudentId.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentId.Name = "txtStudentId";
-            this.txtStudentId.Size = new System.Drawing.Size(169, 21);
+            this.txtStudentId.Size = new System.Drawing.Size(224, 25);
             this.txtStudentId.TabIndex = 1;
             this.txtStudentId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStudentId_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 26);
+            this.label2.Location = new System.Drawing.Point(15, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "请输入学号：";
             // 
             // btnQueryById
             // 
-            this.btnQueryById.Location = new System.Drawing.Point(270, 20);
+            this.btnQueryById.Location = new System.Drawing.Point(360, 25);
+            this.btnQueryById.Margin = new System.Windows.Forms.Padding(4);
             this.btnQueryById.Name = "btnQueryById";
-            this.btnQueryById.Size = new System.Drawing.Size(75, 23);
+            this.btnQueryById.Size = new System.Drawing.Size(100, 29);
             this.btnQueryById.TabIndex = 2;
             this.btnQueryById.Text = "提交查询";
             this.btnQueryById.UseVisualStyleBackColor = true;
@@ -233,9 +245,10 @@
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(636, 27);
+            this.btnClose.Location = new System.Drawing.Point(848, 34);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(100, 29);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,9 +259,10 @@
             // 
             this.btnEidt.Image = ((System.Drawing.Image)(resources.GetObject("btnEidt.Image")));
             this.btnEidt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEidt.Location = new System.Drawing.Point(528, 27);
+            this.btnEidt.Location = new System.Drawing.Point(704, 34);
+            this.btnEidt.Margin = new System.Windows.Forms.Padding(4);
             this.btnEidt.Name = "btnEidt";
-            this.btnEidt.Size = new System.Drawing.Size(75, 23);
+            this.btnEidt.Size = new System.Drawing.Size(100, 29);
             this.btnEidt.TabIndex = 2;
             this.btnEidt.Text = "修  改";
             this.btnEidt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -260,9 +274,10 @@
             this.btnDel.ForeColor = System.Drawing.Color.Red;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(614, 27);
+            this.btnDel.Location = new System.Drawing.Point(819, 34);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.Size = new System.Drawing.Size(100, 29);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "删  除";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -273,9 +288,10 @@
             // 
             this.btnNameDESC.Image = ((System.Drawing.Image)(resources.GetObject("btnNameDESC.Image")));
             this.btnNameDESC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNameDESC.Location = new System.Drawing.Point(304, 29);
+            this.btnNameDESC.Location = new System.Drawing.Point(405, 36);
+            this.btnNameDESC.Margin = new System.Windows.Forms.Padding(4);
             this.btnNameDESC.Name = "btnNameDESC";
-            this.btnNameDESC.Size = new System.Drawing.Size(84, 23);
+            this.btnNameDESC.Size = new System.Drawing.Size(112, 29);
             this.btnNameDESC.TabIndex = 5;
             this.btnNameDESC.Text = "姓名降序";
             this.btnNameDESC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,9 +302,10 @@
             // 
             this.btnStuIdDESC.Image = ((System.Drawing.Image)(resources.GetObject("btnStuIdDESC.Image")));
             this.btnStuIdDESC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStuIdDESC.Location = new System.Drawing.Point(399, 29);
+            this.btnStuIdDESC.Location = new System.Drawing.Point(532, 36);
+            this.btnStuIdDESC.Margin = new System.Windows.Forms.Padding(4);
             this.btnStuIdDESC.Name = "btnStuIdDESC";
-            this.btnStuIdDESC.Size = new System.Drawing.Size(84, 23);
+            this.btnStuIdDESC.Size = new System.Drawing.Size(112, 29);
             this.btnStuIdDESC.TabIndex = 5;
             this.btnStuIdDESC.Text = "学号降序";
             this.btnStuIdDESC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,9 +316,10 @@
             // 
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(584, 162);
+            this.btnPrint.Location = new System.Drawing.Point(779, 202);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(127, 23);
+            this.btnPrint.Size = new System.Drawing.Size(169, 29);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "打印当前学员信息";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -317,9 +335,11 @@
             this.groupBox2.Controls.Add(this.btnNameDESC);
             this.groupBox2.Controls.Add(this.btnDel);
             this.groupBox2.Controls.Add(this.btnEidt);
-            this.groupBox2.Location = new System.Drawing.Point(22, 65);
+            this.groupBox2.Location = new System.Drawing.Point(29, 81);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(707, 71);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(943, 89);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "[按照班级查询]";
@@ -327,19 +347,20 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("方正准圆简体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.ForeColor = System.Drawing.Color.Purple;
-            this.label9.Location = new System.Drawing.Point(16, 18);
+            this.label9.Location = new System.Drawing.Point(21, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 32);
+            this.label9.Size = new System.Drawing.Size(246, 42);
             this.label9.TabIndex = 3;
             this.label9.Text = "学员信息管理";
             // 
             // FrmStudentManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 518);
+            this.ClientSize = new System.Drawing.Size(1004, 648);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvStudentList);
@@ -348,10 +369,12 @@
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmStudentManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学员信息管理";
+            this.Load += new System.EventHandler(this.FrmStudentManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
